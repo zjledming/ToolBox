@@ -16,8 +16,8 @@ import org.apache.commons.io.FileUtils;
 
 public class Tomcat {
 
-	public static String tomcatPath = "E:\\tomcat-6.0";
-	public static String projectPath = "E:\\workspace";
+	public static String tomcatPath = "E:\\server\\apache-tomcat-6.0.41";
+	public static String projectPath = "F:\\workspace";
 	private static String f = File.separator;
 
 	/**
@@ -29,7 +29,7 @@ public class Tomcat {
 	 */
 	public boolean config(String tomcatPath, String projectPath)
 			throws Exception {
-		System.out.println(tomcatPath + projectPath);// E:\tomcat-6.0
+		// E:\tomcat-6.0
 														// E:\workspace\hyxfs-core\creatorepp
 
 		/*
@@ -96,7 +96,7 @@ public class Tomcat {
 	 * @return
 	 */
 	public boolean clear(String tomcatPath) throws Exception {
-		System.out.println(tomcatPath);// E:\tomcat-6.0
+		//System.out.println(tomcatPath);// E:\tomcat-6.0
 		File file = new File(tomcatPath,"work");
 		if (file.exists()) {
 			tomcatPath = tomcatPath.replace("\\", "\\\\");
@@ -229,13 +229,13 @@ public class Tomcat {
 		File configXML = new File(tomcatPath, "conf\\Catalina\\localhost\\creatorepp.xml");
 		if (configXML.exists()) {
 			String content = FileUtils.readFileToString(configXML);
-			System.out.println(content);
+			//System.out.println(content);
 			re = getByReg(content);
 			re = re.replace("docBase=", "").replace("\"", "");
 		}else{
 			re = "配置文件不存在："+configXML.getAbsolutePath();
 		}
-		System.out.println(re);
+		//System.out.println(re);
 		return re;
 	}
 	

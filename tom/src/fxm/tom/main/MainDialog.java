@@ -208,7 +208,6 @@ public class MainDialog extends JFrame {
 				invoke(10000);
 			}
 		});
-		System.out.println(iheight);
 		// button.setBounds(ix+iwidth/2-bwidth/2, iy+iheight-2*theight, bwidth,
 		// theight);
 		// 按钮的x.y都是相对窗体本身边界，不是显示屏的边界（减去title的宽度）
@@ -244,7 +243,6 @@ public class MainDialog extends JFrame {
 				}
 			});
 			// 按钮的x.y都是相对窗体本身边界，不是显示屏的边界（减去title的宽度）
-			System.out.println(butx0);
 			button.setBounds(butx0 + i * (butWidth + 30), iheight - 30 - 4
 					* theight, butWidth, theight);
 			this.contentPane.add(button);
@@ -317,9 +315,9 @@ public class MainDialog extends JFrame {
 		setHeader("项目路径：", 2);
 
 		// 第一行文本
-		setText(this.tomcatPath, 1, "E:\\tomcat-6.0");
+		setText(this.tomcatPath, 1, Tomcat.tomcatPath);
 		// 第二行文本
-		setText(this.projectPath, 2, "E:\\workspace\\hyxfs\\creatorepp");
+		setText(this.projectPath, 2, Tomcat.projectPath);
 
 		// 第一行按钮
 		setSelect("选择", 1);
