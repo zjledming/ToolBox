@@ -3,6 +3,7 @@
     <wb-module deploy-name="Utils">
         <wb-resource deploy-path="/" source-path="/WebRoot"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/baseframeworkmodel"/>
         <property name="context-root" value="/Utils"/>
         <property name="java-output-path" value="/Utils/WebRoot/WEB-INF/classes"/>
     </wb-module>

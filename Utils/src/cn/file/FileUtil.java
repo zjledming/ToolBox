@@ -28,6 +28,7 @@ import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.junit.Test;
 
 /**
  * @ClassName: FileUtil
@@ -531,6 +532,9 @@ public class FileUtil {
 		}
 	}
 
+	
+	
+	
 	public static void writeStr2File(String file, String content) {
 		try {
 			File f = new File(file);
@@ -630,6 +634,35 @@ public class FileUtil {
 			System.err.println("file Backup error!");
 			return false;
 		}
+	}
+	
+	public static void deleteFolder(String filePath){
+		try {
+			File file = new File(filePath);
+			if (file.exists() && file.isDirectory()) {
+				FileUtils.deleteDirectory(file);
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+	}
+	
+	
+	@Test
+	public void copyTest(){
+//		String resFilePath = "E:\\workspace\\ROOT";
+		String resFilePath = "E:\\workspace\\ROOT\\WEB-INF\\jsp";
+		
+		String distFolder = "F:\\webapp\\Tomcat6-USER\\webapps";
+		String distFolder2 = "F:\\webapp\\Tomcat6-USER\\webapps\\ROOT";
+		String distFolder3 = "F:\\webapp\\Tomcat6-USER\\work";
+		String distFolder4 = "F:\\webapp\\Tomcat6-USER\\webapps\\ROOT\\WEB-INF\\jsp";
+		
+		//deleteFolder(distFolder2);
+		//deleteFolder(distFolder3);
+		deleteFolder(distFolder4);
+		copyFile(resFilePath, distFolder4);
 	}
 
 	/**

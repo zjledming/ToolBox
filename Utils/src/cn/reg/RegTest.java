@@ -10,7 +10,7 @@ import org.junit.Test;
 
 public class RegTest {
 
-	public static void main1(String[] args) {
+	public static void main(String[] args) {
 		// [\\s\\S]*?£ºÆ¥ÅäÈÎÒâ×Ö·ûÈÎÒâ´ÎÊı
 		// [\\s\\S]:Æ¥ÅäÈÎÒâ×Ö·û \s£º¿Õ°××Ö·û \S£º·Ç¿Õ°××Ö·û
 		// *?£º³öÏÖÈÎÒâ´Î *£º0´Î»òÕß¶à´Î ?:0»ò1´Î
@@ -20,6 +20,21 @@ public class RegTest {
 			String textarea = matcher.group(1);
 			System.out.println(textarea);
 		}
+		
+		phhanzi("fewf2313()&*·É·ÇÎÒ·½2132¶îµçfewfÍâ");
+	}
+	
+	
+	public static void  phhanzi(String value){
+		
+		String regExp = "[\u4E00-\u9FA5]";  
+		Pattern p = Pattern.compile(regExp); 
+		Matcher m = p.matcher(value); 
+		while (m.find()) {
+			System.out.println(m.group());
+			
+		}
+		System.out.println("fewf2313()&*·É·ÇÎÒ·½2132¶îµçfewfÍâ".replaceAll("[\u4E00-\u9FA5]", ""));
 	}
 
 	public static String StringFilter(String str) throws PatternSyntaxException {
@@ -159,7 +174,7 @@ public class RegTest {
 		return matcher.replaceAll("?");
 	}
 
-	public static void main(String[] args) {
+	public static void main1(String[] args) {
 		String resutl = StringFilter("'fewfew/''fewfewfewf'");
 		System.out.println(resutl);
 
@@ -175,7 +190,7 @@ public class RegTest {
 		Matcher matcher = pattern.matcher("Java²»ÊÇÈË");
 		boolean b = matcher.matches();
 		// µ±Ìõ¼şÂú×ãÊ±£¬½«·µ»Øtr£¬·ñÔò·µ»Øfalse
-		System.out.println(b);
+		System.out.println("=="+b);
 
 		String[] arrString = temp.split("IMG");
 		System.out.println(arrString.length);

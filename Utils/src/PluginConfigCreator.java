@@ -85,7 +85,7 @@ public class PluginConfigCreator {
 	public static void main(String[] args) {
 		/* 你的插件的安装目录 */
 //		String plugin = "D:/Program Files/myplugins/svn/site-1.6.5";
-		String plugin = "D:/Program Files/myeclipse9.1/myplugins/helloworld";
+		String plugin = "D:/Program Files/myeclipse9.1/myplugins/jadclipse_3.3.0";
 		new PluginConfigCreator().print(plugin);
 	}
 }

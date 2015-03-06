@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkflowProcess monitor_only_show_started="">
+	<Participants Order="tylc02_wp1_par1;tylc02_wp1_par2">
+		<Participant Id="tylc02_wp1_par1" Name="受理" />
+		<Participant Id="tylc02_wp1_par2" Name="审查人员" />
+	</Participants>
+	<Activities>
+		<Activity Id="tylc02_wp1_act1" Name="受理" ParticipantId="tylc02_wp1_par1"
+			XOffset="191" YOffset="52" Type="no"></Activity>
+		<Activity Id="tylc02_wp1_act2" Name="审查" ParticipantId="tylc02_wp1_par2"
+			XOffset="189" YOffset="59" Type="no"></Activity>
+		<Activity Id="tylc02_wp1_act3" Name="退窗" ParticipantId="tylc02_wp1_par1"
+			XOffset="332" YOffset="48" Type="no"></Activity>
+		<Activity Id="tylc02_wp1_act4" Name="告知送达" ParticipantId="tylc02_wp1_par1"
+			XOffset="550" YOffset="53" Type="no"></Activity>
+	</Activities>
+	<Transitions>
+		<Transition Id="tylc02_wp1_tra1" From="tylc02_wp1_act1" To="tylc02_wp1_act2" />
+		<Transition Id="tylc02_wp1_tra2" From="tylc02_wp1_act2" To="tylc02_wp1_act3" />
+		<Transition Id="tylc02_wp1_tra3" From="tylc02_wp1_act2" To="tylc02_wp1_act4" />
+	</Transitions>
+	<BubbleNode ParticipantId="tylc02_wp1_par1" ConnectActId="tylc02_wp1_act1"
+		XOffset="99" YOffset="60" Type="Start" />
+	<BubbleNode ParticipantId="tylc02_wp1_par1" ConnectActId="tylc02_wp1_act3"
+		XOffset="453" YOffset="59" Type="End" />
+	<BubbleNode ParticipantId="tylc02_wp1_par1" ConnectActId="tylc02_wp1_act4"
+		XOffset="706" YOffset="64" Type="End" />
+</WorkflowProcess>

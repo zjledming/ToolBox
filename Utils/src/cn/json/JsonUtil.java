@@ -38,6 +38,16 @@ public class JsonUtil {
 		bean.setDwbm("dwbm");
 		System.out.println(beanToJson(bean));
 		
+		JKSbean bean2 = new JKSbean();
+		bean.setDtbm("dtbn");
+		bean.setDwbm("dwbm");
+		
+		List<JKSbean> list = new ArrayList<JKSbean>();
+		list.add(bean);
+		list.add(bean2);
+		
+		System.out.println(listToJson(list));
+		
 	}
 
 	/**

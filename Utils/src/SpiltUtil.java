@@ -16,6 +16,17 @@ public class SpiltUtil {
 		tem ="E:\\workspace\\CodeCreator\\src";
 		arr = tem.split("src\\\\");
 		System.out.println(arr.length);
+		
+		String temp = "城市基础设施配套费（县城商场）";
+		String re = temp.split("（")[0];
+		System.out.println(re);
+		 re = "城市基础设施配套费(县城商场）".split("\\(")[0];
+		System.out.println(re);
+		
+		int i=  "城市基础设施配套费(县城商场）".indexOf("(");
+		System.out.println(i);
+		
+		
 	}
 
 }
